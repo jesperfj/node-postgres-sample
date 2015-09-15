@@ -1,0 +1,28 @@
+<form class="form-inline" method="GET" action="">
+  <div class="form-group">
+    <label for="q">Search</label>
+    <input type="text" class="form-control" name="q" id="q" placeholder="A blue box" value="{{q}}">
+  </div>
+  <button type="submit" class="btn btn-default">Go</button>
+</form>
+
+{{#if results}}
+
+  <h2>Results</h2>
+
+  <table class="table">
+    <tr>
+    {{#each attributes}}
+      <th>{{label}}</th>
+    {{/each}}
+    </tr>
+    {{#each results as |r|}}
+      <tr>
+        {{#each ../attributes}}
+          <td>{{lookup r name}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </table>
+
+{{/if}}

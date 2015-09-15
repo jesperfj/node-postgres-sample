@@ -5,17 +5,8 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('neft-products:server');
+var debug = require('debug')('app:server');
 var http = require('http');
-
-/**
- * Set up database
- */
-
-var connectionString = process.env.DATABASE_URL || "localhost";
-var massive = require("massive");
-var massiveInstance = massive.connectSync({connectionString : connectionString});
-app.set('db', massiveInstance);
 
 
 /**
