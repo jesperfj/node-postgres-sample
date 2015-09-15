@@ -1,0 +1,25 @@
+{
+  "name": "product-catalog",
+  "description": "Sample express + postgres app",
+  "keywords": [
+    "node",
+    "postgres"
+  ],
+  "website": "https://github.com/jesperfj/node-postgres-sample",
+  "repository": "https://github.com/jesperfj/node-postgres-sample",
+  "success_url": "/",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "DEMO_VAR": {
+      "description": "A demo config var",
+      "value": "5"
+    }
+  },
+  "image": "heroku/nodejs",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
