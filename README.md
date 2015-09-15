@@ -14,4 +14,4 @@ A simple sample app that shows use of Postgres as a document store leveraging th
 
 ## Extending
 
-The demo code has been designed so that you can extend the schema of your product data by editing [a single Javascript array of structs in a single file](routes/products.js#L6-L9). 
+The demo code has been designed so that you can extend the schema of your product data by editing [a single Javascript array of structs in a single file](routes/products.js#L6-L10). 
