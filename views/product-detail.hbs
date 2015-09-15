@@ -1,0 +1,10 @@
+  <h2>Product Detail</h2>
+
+  <table class="table">
+    {{#each attributes}}
+      <tr>
+        <th>{{label}}</th>
+        <td>{{lookup ../product name}}</td>
+      </tr>
+    {{/each}}
+  </table>

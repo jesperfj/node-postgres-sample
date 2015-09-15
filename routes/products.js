@@ -43,12 +43,31 @@ router.get('/_new', function(req, res, next) {
   });
 });
 
+// Show product detail
+router.get('/:id', function(req,res,next) {
+  req.app.get('db').product.findDoc(parseInt(req.params.id), function(err,result) {
+    if(err) {
+      console.log("Error finding product "+req.params.id+" in database: "+err);
+      res.sendStatus(500);
+    } else {
+      res.render('product-detail', {
+        tab: 'products',
+        title: 'Product: '+result.name,
+        product: result,
+        attributes: productAttributes 
+      })
+    }
+  });
+
+});
+
+
 // Create a new product
 router.post('/', function(req, res, next) {
   req.app.get('db').saveDoc("product",req.body, function(err,result) {
     if(err) {
         console.log(err);
-        res.send(500);
+        res.sendStatus(500);
     } else {
         console.log("Saved: "+req.body);
         console.log("Response: "+JSON.stringify(result));
