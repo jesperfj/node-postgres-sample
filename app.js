@@ -11,7 +11,7 @@ var products = require('./routes/products');
 var app = express();
 
 // Set up Postgres using massive.js
-var connectionString = process.env.DATABASE_URL || "postgres://postgres@localhost/postgres";
+var connectionString = process.env.DATABASE_URL + "?ssl=true" || "postgres://postgres@localhost/postgres";
 var massive = require("massive");
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 app.set('db', massiveInstance);
